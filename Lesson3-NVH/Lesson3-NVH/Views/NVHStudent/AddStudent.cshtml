@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "AddStudent";
+}
+
+    <h2>Form</h2>
+    @{Html.BeginForm("Insert", "NVHStudent");}
+    @Html.Label("Mã sinh viên");
+    @Html.TextBox("Hoten", "Hiếu");
+
+
+    @{Html.EndForm(); }
