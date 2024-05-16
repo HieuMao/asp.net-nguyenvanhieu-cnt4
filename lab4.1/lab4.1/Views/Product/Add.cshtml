@@ -1,0 +1,28 @@
+﻿@model lab4._1.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Add Product";
+}
+
+<h2>Add Product</h2>
+
+@using (Html.BeginForm("Add", "Product", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProductId)
+        @Html.TextBoxFor(m => m.ProductId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProductName)
+        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Unit)
+        @Html.TextBoxFor(m => m.Unit, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+}
