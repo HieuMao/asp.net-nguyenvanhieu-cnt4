@@ -1,0 +1,66 @@
+﻿@model Nguyenvanhieu_BaiThiGiuaKy.Models.NvhCustomer
+
+@{
+    ViewBag.Title = "NvhDetail";
+}
+
+<h2>Chi tiết khách hàng</h2>
+
+<div>
+    <h4>NvhCustomer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Msv_CustId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Msv_CustId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nvh_FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nvh_FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nvh_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nvh_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nvh_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nvh_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nvh_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nvh_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nvh_Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nvh_Balance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("NvhEdit", "NvhEdit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

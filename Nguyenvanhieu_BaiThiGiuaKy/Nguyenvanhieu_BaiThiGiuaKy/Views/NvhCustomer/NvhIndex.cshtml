@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Nguyenvanhieu_BaiThiGiuaKy.Models.NvhCustomer>
+
+@{
+    ViewBag.Title = "NvhIndex";
+}
+
+<h2>NvhIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "NvhCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Msv_CustId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nvh_FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nvh_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nvh_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nvh_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nvh_Balance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Msv_CustId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nvh_FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nvh_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nvh_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nvh_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nvh_Balance)
+        </td>
+        <td>
+            @Html.ActionLink("NvhEdit", "NvhEdit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("NvhDetail", "NvhDetail", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
