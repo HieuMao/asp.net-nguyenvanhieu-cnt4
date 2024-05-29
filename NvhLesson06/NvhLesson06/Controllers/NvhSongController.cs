@@ -11,8 +11,8 @@ namespace NvhLesson06.Controllers
     {
         private static List<NvhSong> NvhSongs = new List<NvhSong>()
         {
-            new NvhSong{Id=221090055,NvhTitle="Nguyễn Văn Hiếu ",NvhAuthor="K22CNTT4",},
-            new NvhSong{Id=221090065,NvhTitle="Nguyễn Văn Hiếu ",NvhAuthor="K22CNTT4",},
+            new NvhSong{Id=2210900102,NvhTitle="Nguyễn Văn Hiếu ",NvhAuthor="K22CNTT4",},
+            new NvhSong{Id=2210900103,NvhTitle="Nguyễn Văn Hiếu ",NvhAuthor="K22CNTT4",},
 
         };
 
