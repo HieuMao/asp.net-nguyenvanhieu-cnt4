@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NvhBaiKiemTraGK.Model.nvhKhoa>
+
+@{
+    ViewBag.Title = "NvhIndex";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "NvhCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NvhTenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvhTrangThai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvhTenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvhTrangThai)
+        </td>
+        <td>
+            @Html.ActionLink("NvhEdit", "NvhEdit", new { id=item.NvhMaKH }) |
+            @Html.ActionLink("NvhDetails", "NvhDetails", new { id=item.NvhMaKH }) |
+            @Html.ActionLink("NvhDelete", "NvhDelete", new { id=item.NvhMaKH })
+        </td>
+    </tr>
+}
+
+</table>
