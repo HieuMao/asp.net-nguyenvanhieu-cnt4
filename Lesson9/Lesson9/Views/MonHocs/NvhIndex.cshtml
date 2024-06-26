@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Lesson9.Models.MonHoc>
+
+@{
+    ViewBag.Title = "NvhIndex";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "NvhCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenMH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoTiet)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenMH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoTiet)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "NvhEdit", new { id=item.MaMH }) |
+            @Html.ActionLink("Details", "NvhDetails", new { id=item.MaMH }) |
+            @Html.ActionLink("Delete", "NvhDelete", new { id=item.MaMH })
+        </td>
+    </tr>
+}
+
+</table>
