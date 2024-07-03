@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="NvhAccounts">
+      <EntityTypeMapping TypeName="Model.NvhAccount">
+        <MappingFragment StoreEntitySet="NvhAccount">
+          <ScalarProperty Name="NvhID" ColumnName="NvhID" />
+          <ScalarProperty Name="NvhUserName" ColumnName="NvhUserName" />
+          <ScalarProperty Name="NvhPassword" ColumnName="NvhPassword" />
+          <ScalarProperty Name="NvhFullName" ColumnName="NvhFullName" />
+          <ScalarProperty Name="NvhEmail" ColumnName="NvhEmail" />
+          <ScalarProperty Name="NvhPhone" ColumnName="NvhPhone" />
+          <ScalarProperty Name="NvhActive" ColumnName="NvhActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,67 @@
+﻿@model Nvh_Lesson10.Models.NvhAccount
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_NvhLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NvhAccount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NvhID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
