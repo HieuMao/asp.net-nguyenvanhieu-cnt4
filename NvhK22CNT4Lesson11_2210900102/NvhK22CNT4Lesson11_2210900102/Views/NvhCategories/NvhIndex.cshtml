@@ -1,0 +1,51 @@
+﻿@model IEnumerable<NvhK22CNT4Lesson11_2210900102.Models.NvhCategory>
+
+@{
+    ViewBag.Title = "Danh mục sản phẩm ";
+    Layout = "~/Views/Shared/_Nvh2210900102Layout.cshtml";
+}
+
+<h2>Danh mục sản phẩm</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<a href="/NvhCategories/Create" class="btn btn-primary my-3">Thêm mới</a>
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NvhCateName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NvhStatus)
+                </th>
+                <th>Chức năng</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NvhCateName)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.NvhStatus)*@
+
+                        @if (item.NvhStatus == true)
+                        {
+                            <span style="color:green"> Hoạt động </span>
+                        }
+                        else
+                        {
+                            <span style="color:red"> Không hoạt động </span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.NvhId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.NvhId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.NvhId })
+                    </td>
+                </tr>
+            }
+
+        </table>

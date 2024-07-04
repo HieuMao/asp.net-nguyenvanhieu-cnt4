@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NvhK22CNT4Lesson11DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="NvhCategory">
+    <Key>
+      <PropertyRef Name="NvhId" />
+    </Key>
+    <Property Name="NvhId" Type="int" Nullable="false" />
+    <Property Name="NvhCateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="NvhStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="NvhProduct">
+    <Key>
+      <PropertyRef Name="NvhId2210900102" />
+    </Key>
+    <Property Name="NvhId2210900102" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NvhProName" Type="nvarchar" MaxLength="50" />
+    <Property Name="NvhQty" Type="int" />
+    <Property Name="NvhPrice" Type="float" />
+    <Property Name="NvhCateId" Type="int" />
+    <Property Name="NvhActive" Type="bit" />
+  </EntityType>
+  <Association Name="FK_NvhProduct_NvhCategory">
+    <End Role="NvhCategory" Type="Self.NvhCategory" Multiplicity="0..1" />
+    <End Role="NvhProduct" Type="Self.NvhProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NvhCategory">
+        <PropertyRef Name="NvhId" />
+      </Principal>
+      <Dependent Role="NvhProduct">
+        <PropertyRef Name="NvhCateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NvhK22CNT4Lesson11DbModelStoreContainer">
+    <EntitySet Name="NvhCategory" EntityType="Self.NvhCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NvhProduct" EntityType="Self.NvhProduct" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_NvhProduct_NvhCategory" Association="Self.FK_NvhProduct_NvhCategory">
+      <End Role="NvhCategory" EntitySet="NvhCategory" />
+      <End Role="NvhProduct" EntitySet="NvhProduct" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

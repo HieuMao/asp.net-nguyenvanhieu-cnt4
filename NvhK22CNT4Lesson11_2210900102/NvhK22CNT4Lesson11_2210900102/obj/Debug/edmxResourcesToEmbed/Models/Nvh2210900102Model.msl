@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NvhK22CNT4Lesson11DbModelStoreContainer" CdmEntityContainer="NvhK22CNT4Lesson11DbEntities">
+    <EntitySetMapping Name="NvhCategory">
+      <EntityTypeMapping TypeName="NvhK22CNT4Lesson11DbModel.NvhCategory">
+        <MappingFragment StoreEntitySet="NvhCategory">
+          <ScalarProperty Name="NvhId" ColumnName="NvhId" />
+          <ScalarProperty Name="NvhCateName" ColumnName="NvhCateName" />
+          <ScalarProperty Name="NvhStatus" ColumnName="NvhStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NvhProduct">
+      <EntityTypeMapping TypeName="NvhK22CNT4Lesson11DbModel.NvhProduct">
+        <MappingFragment StoreEntitySet="NvhProduct">
+          <ScalarProperty Name="NvhId2210900102" ColumnName="NvhId2210900102" />
+          <ScalarProperty Name="NvhProName" ColumnName="NvhProName" />
+          <ScalarProperty Name="NvhQty" ColumnName="NvhQty" />
+          <ScalarProperty Name="NvhPrice" ColumnName="NvhPrice" />
+          <ScalarProperty Name="NvhCateId" ColumnName="NvhCateId" />
+          <ScalarProperty Name="NvhActive" ColumnName="NvhActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

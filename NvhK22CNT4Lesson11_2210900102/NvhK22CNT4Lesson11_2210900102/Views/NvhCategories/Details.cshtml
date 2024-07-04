@@ -1,0 +1,35 @@
+﻿@model NvhK22CNT4Lesson11_2210900102.Models.NvhCategory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Nvh2210900102Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NvhCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhCateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhCateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NvhId }) |
+    @Html.ActionLink("Back to List", "NvhIndex")
+</p>

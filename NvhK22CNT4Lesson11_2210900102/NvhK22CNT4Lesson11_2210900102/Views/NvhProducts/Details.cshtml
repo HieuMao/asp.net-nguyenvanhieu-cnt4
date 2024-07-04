@@ -1,0 +1,59 @@
+﻿@model NvhK22CNT4Lesson11_2210900102.Models.NvhProduct
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Nvh2210900102Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NvhProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhProName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhProName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvhCategory.NvhCateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvhCategory.NvhCateName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NvhId2210900102 }) |
+    @Html.ActionLink("Back to List", "NvhIndex")
+</p>

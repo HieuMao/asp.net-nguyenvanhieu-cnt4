@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NvhK22CNT4Lesson11DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NvhCategory">
+    <Key>
+      <PropertyRef Name="NvhId" />
+    </Key>
+    <Property Name="NvhId" Type="Int32" Nullable="false" />
+    <Property Name="NvhCateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NvhStatus" Type="Boolean" />
+    <NavigationProperty Name="NvhProduct" Relationship="Self.FK_NvhProduct_NvhCategory" FromRole="NvhCategory" ToRole="NvhProduct" />
+  </EntityType>
+  <EntityType Name="NvhProduct">
+    <Key>
+      <PropertyRef Name="NvhId2210900102" />
+    </Key>
+    <Property Name="NvhId2210900102" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NvhProName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NvhQty" Type="Int32" />
+    <Property Name="NvhPrice" Type="Double" />
+    <Property Name="NvhCateId" Type="Int32" />
+    <Property Name="NvhActive" Type="Boolean" />
+    <NavigationProperty Name="NvhCategory" Relationship="Self.FK_NvhProduct_NvhCategory" FromRole="NvhProduct" ToRole="NvhCategory" />
+  </EntityType>
+  <Association Name="FK_NvhProduct_NvhCategory">
+    <End Role="NvhCategory" Type="Self.NvhCategory" Multiplicity="0..1" />
+    <End Role="NvhProduct" Type="Self.NvhProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NvhCategory">
+        <PropertyRef Name="NvhId" />
+      </Principal>
+      <Dependent Role="NvhProduct">
+        <PropertyRef Name="NvhCateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NvhK22CNT4Lesson11DbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NvhCategory" EntityType="Self.NvhCategory" />
+    <EntitySet Name="NvhProduct" EntityType="Self.NvhProduct" />
+    <AssociationSet Name="FK_NvhProduct_NvhCategory" Association="Self.FK_NvhProduct_NvhCategory">
+      <End Role="NvhCategory" EntitySet="NvhCategory" />
+      <End Role="NvhProduct" EntitySet="NvhProduct" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

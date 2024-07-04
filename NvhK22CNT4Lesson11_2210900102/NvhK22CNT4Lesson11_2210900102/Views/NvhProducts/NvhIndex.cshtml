@@ -1,0 +1,66 @@
+﻿@model IEnumerable<NvhK22CNT4Lesson11_2210900102.Models.NvhProduct>
+
+@{
+    ViewBag.Title = "Danh sách sản phẩm ";
+    Layout = "~/Views/Shared/_Nvh2210900102Layout.cshtml";
+}
+
+<h2>Danh sách sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NvhProName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvhQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvhPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvhActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvhCategory.NvhCateName)
+        </th>
+        <th>Chức năng</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvhProName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvhQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvhPrice)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.NvhActive)*@
+            @if (item.NvhActive == true)
+            {
+                <span style="color:green"> Hoạt động </span>
+            }
+            else
+            {
+                <span style="color:red"> Không hoạt động </span>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvhCategory.NvhCateName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NvhId2210900102 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NvhId2210900102 }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NvhId2210900102 })
+        </td>
+    </tr>
+}
+
+</table>
